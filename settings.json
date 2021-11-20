@@ -1,0 +1,43 @@
+{
+    /*---------------GlOBAL EDITOR CONFIGURATIONS--------------*/
+    "editor.minimap.enabled": false,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.fontSize": 13,
+    "workbench.colorTheme": "Abyss",
+    "files.autoSave": "afterDelay",
+    /*---------------C++ STUFF--------------*/
+    "cmake.configureOnOpen": true,
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "clangd.path": "/home/leanne/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/13.0.0/clangd_13.0.0/bin/clangd",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "clang-format.executable": "/usr/bin/clang-format-12",
+    "clang-format.style": "google",
+    "clang-format.language.c.enable": true,
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.wordBasedSuggestions": false,
+        "editor.suggest.insertMode": "replace",
+        "editor.semanticHighlighting.enabled": true
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    //clangd
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=never",
+        "--suggest-missing-includes",
+        "--compile-commands-dir=./build/"
+    ],
+    "c-cpp-flylint.flawfinder.enable": false,
+    "c-cpp-flylint.lizard.enable": false,
+    "c-cpp-flylint.cppcheck.enable": true,
+    "c-cpp-flylint.cppcheck.inconclusive": true,
+    "c-cpp-flylint.cppcheck.verbose": true,
+    "window.zoomLevel": 2
+}
