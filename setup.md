@@ -60,16 +60,16 @@ Your local, or project-specific settings are stored in a project’s `.git/confi
 `sudo -Rns pkgname`
 
 ### Display all installed packages
-`sudo pacman -Q`
+`pacman -Q`
 
 ### Find available local packages
-`sudo pacman -Qs keyword`
+`pacman -Qs keyword`
 
 ### List all files from package
-`sudo pacman -Ql pkgname`
+`pacman -Ql pkgname`
 
 ### List total number of installed packages by counting lines of output
-`sudo pacman -Q| wc -l`
+`pacman -Q| wc -l`
 
 ### List only packages installed from the main reposities
 `sudo pacman -Qn`
@@ -93,7 +93,7 @@ Your local, or project-specific settings are stored in a project’s `.git/confi
 `sudo pacman -Rs package_name`
 
 ### List all packages no longer required as dependencies
-`sudo pacman -Qdt`
+`pacman -Qdt`
 
 ### Get IP address
 `ip addr`
