@@ -29,11 +29,20 @@ Your local, or project-specific settings are stored in a project’s `.git/confi
 
 ## Some other common commands
 
-### Update package list
+### (force)Update package even if recently updated
 `sudo pacman -Syy`
+
+### Update package
+`sudo -Sy`
+
+### Upgrade installed package
+`sudo -Su`
 
 ### Update and upgrade all
 `sudo pacman -Syu`
+
+### Update and dist-upgrade all
+`sudo pacman -Syyu`
 
 ### Install specific package
 `sudo pacman -S pkgname`
@@ -41,11 +50,32 @@ Your local, or project-specific settings are stored in a project’s `.git/confi
 ### Find available packages
 `sudo pacman -Ss keyword`
 
+### Remove packages
+`sudo -R pkgname`
+
+### Remove packages as well as unneeded dependencies
+`sudo -Rs pkgname`
+
+### Remove packages, dependencies, and system config files (Recommended)
+`sudo -Rns pkgname`
+
+### Display all installed packages
+`sudo pacman -Q`
+
 ### Find available local packages
 `sudo pacman -Qs keyword`
 
 ### List all files from package
-`pacman -Ql pkgname`
+`sudo pacman -Ql pkgname`
+
+### List total number of installed packages by counting lines of output
+`sudo pacman -Q| wc -l`
+
+### List only packages installed from the main reposities
+`sudo pacman -Qn`
+
+### List only packages installed from AUR
+`sudo pacman -Qm`
 
 ### Pacman log file
 `/var/log/pacman.log`
