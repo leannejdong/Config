@@ -59,8 +59,11 @@ Your local, or project-specific settings are stored in a project’s `.git/confi
 ### Remove packages, dependencies, and system config files (Recommended)
 `sudo -Rns pkgname`
 
-### Display all installed packages
+### List all installed packages
 `pacman -Q`
+
+### List all installed packages with locations
+`pacman -Ql`
 
 ### Find available local packages
 `pacman -Qs keyword`
