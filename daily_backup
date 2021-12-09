@@ -1,0 +1,8 @@
+#!/bin/bash
+DAY=$(date +%A)
+
+rm -fr /run/media/leanne/76E8-CACF/root_backup/incremental/$DAY
+rm -fr /run/media/leanne/76E8-CACF/boot_backup/incremental/$DAY
+
+rsync --one-file-system -a --delete --quiet --inplace --backup --backup-dir=/run/media/leanne/76E8-CACF/root_backup/incremental/$DAY/ / /run/media/leanne/76E8-CACF/root_backup/backup/
+rsync --one-file-system -a --delete --quiet --inplace --backup --backup-dir=/run/media/leanne/76E8-CACF/boot_backup/incremental/$DAY/ /boot/efi/ /run/media/leanne/76E8-CACF/boot_backup/backup/
