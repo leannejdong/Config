@@ -1,8 +1,8 @@
 #!/bin/bash
 DAY=$(date +%A)
 
-rm -fr /run/media/leanne/76E8-CACF/root_backup/incremental/$DAY
-rm -fr /run/media/leanne/76E8-CACF/boot_backup/incremental/$DAY
+rm -fr /run/media/leanne/f4b564bf-a0ae-4323-bbe6-dfea12c03d0c/root_backup/incremental/$DAY
+rm -fr /run/media/leanne/f4b564bf-a0ae-4323-bbe6-dfea12c03d0c/boot_backup/incremental/$DAY
 
-rsync --one-file-system -a --delete --quiet --inplace --backup --backup-dir=/run/media/leanne/76E8-CACF/root_backup/incremental/$DAY/ / /run/media/leanne/76E8-CACF/root_backup/backup/
-rsync --one-file-system -a --delete --quiet --inplace --backup --backup-dir=/run/media/leanne/76E8-CACF/boot_backup/incremental/$DAY/ /boot/efi/ /run/media/leanne/76E8-CACF/boot_backup/backup/
+rsync --one-file-system -a --delete --quiet --inplace --backup --backup-dir=/run/media/leanne/f4b564bf-a0ae-4323-bbe6-dfea12c03d0c/root_backup/incremental/$DAY/ / /run/media/leanne/f4b564bf-a0ae-4323-bbe6-dfea12c03d0c/root_backup/backup/
+rsync --one-file-system -a --delete --quiet --inplace --backup --backup-dir=/run/media/leanne/f4b564bf-a0ae-4323-bbe6-dfea12c03d0c/boot_backup/incremental/$DAY/ /boot/efi/ /run/media/leanne/f4b564bf-a0ae-4323-bbe6-dfea12c03d0c/boot_backup/backup/
