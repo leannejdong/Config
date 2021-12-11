@@ -4,5 +4,5 @@ DAY=$(date +%A)
 rm -fr /media/usb/root_backup/incremental/$DAY
 rm -fr /media/usb/boot_backup/incremental/$DAY
 
-rsync --one-file-system -a --delete --verbose --inplace --backup --backup-dir=/media/usb/root_backup/incremental/$DAY/ / /media/usb/root_backup/backup/
-rsync --one-file-system -a --delete --verbose --inplace --backup --backup-dir=/media/usb/boot_backup/incremental/$DAY/ /boot/efi/ /media/usb/boot_backup/backup/
+rsync --one-file-system -a --delete --verbose --progress --inplace --backup --backup-dir=/media/usb/root_backup/incremental/$DAY/ / /media/usb/root_backup/backup/
+rsync --one-file-system -a --delete --verbose --progress --inplace --backup --backup-dir=/media/usb/boot_backup/incremental/$DAY/ /boot/efi/ /media/usb/boot_backup/backup/
