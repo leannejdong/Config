@@ -17,3 +17,7 @@ GRUB_DISABLE_SUBMENU=y
 Reloading GRUB Configuration
 
 `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+
+# Check available kernels from pacman
+
+`pacman -Sqs linux | grep linux | less`
