@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 mountdir=/mnt/usb 
 device=$(readlink -f /media/usb) 
  
