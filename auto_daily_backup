@@ -1,0 +1,22 @@
+#!/bin/bash
+mountdir=/mnt/usb 
+device=$(readlink -f /media/usb) 
+ 
+echo "Starting daily backup" 
+ 
+if [ ! -b $device ]; then 
+ echo -n "Drive is not plugged in.." >&2 
+ exit 1 
+fi 
+ 
+already_mounted_device=$(findmnt -no SOURCE $mountdir) 
+ 
+if [ "$already_mounted_device" != "$device" ]; then 
+ mount $device $mountdir || exit 1 
+fi 
+ 
+rsync ... / $mountdir/root_backup || exit 1
+ 
+if [ "$already_mounted_device" != "$device" ]; then 
+ umount $device || exit 1 
+fi
