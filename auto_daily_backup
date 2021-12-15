@@ -1,6 +1,7 @@
 #!/bin/zsh
 mountdir=/mnt/usb 
-device=$(readlink -f /media/usb) 
+#device=$(readlink -f /media/usb) 
+device=/dev/sda1
  
 echo "Starting daily backup" 
  
