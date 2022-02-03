@@ -68,6 +68,25 @@ The `-s` switch appends your name and email to the bottom of the commit message 
 
 `git config --global commit.gpgsign true`
 
+## Cache ssh credential
+
+* Configure git to cache the password
+
+1. Update the URL of origin remote using SSH instead of HTTPS;
+
+`git remote set-url origin git@github.com:username/repo.git`
+
+2. Make Git store the username and password and it will never ask for them.
+
+`git config --global credential.helper store`
+
+3. You can also set a timeout for the above setting
+
+`git config --global credential.helper 'cache --timeout=600'`
+
+[agent failure to sign](https://docs.github.com/en/authentication/troubleshooting-ssh/error-agent-admitted-failure-to-sign)
+
+
 ## Cache GPG passphase using gpg-agent
 
 * Check if you have it installed and configured.
@@ -120,4 +139,8 @@ killall gpg-agent
 Test to see if gpg-agent can cache your private key’s passphrase by amending your last commit:
 
 `git commit -s -S --amend`
+
+## Check if your GPG is functioning
+
+`echo "test" | gpg --clearsign`
 
