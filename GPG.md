@@ -93,6 +93,7 @@ default-cache-ttl 3600
 
 * Add the following lines to your user’s shell profile file e.g `~/.bash_profile:`
 
+<!---
 ```shell
 export GPG_TTY=$(tty)
 [ -f ~/.gnupg/gpg-agent-info ] && source ~/.gnupg/gpg-agent-info
@@ -110,6 +111,8 @@ Then reload the profile file
 killall gpg-agent
 . ~/.bash_profile
 ```
+
+--->
 Test to see if gpg-agent can cache your private key’s passphrase by amending your last commit:
 
 `git commit -s -S --amend`
