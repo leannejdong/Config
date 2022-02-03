@@ -93,6 +93,10 @@ default-cache-ttl 3600
 
 * Add the following lines to your user’s shell profile file e.g `~/.bash_profile:`
 
+```shell
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye> /dev/null
+```
 <!---
 ```shell
 export GPG_TTY=$(tty)
