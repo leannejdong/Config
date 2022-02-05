@@ -1,7 +1,7 @@
-#!/bin/zsh
+#!/bin/bash
 mountdir=/mnt/usb 
 #device=$(readlink -f /media/usb) 
-device=/dev/sda1
+device=/dev/sdc1
  
 echo "Starting daily backup" 
  
@@ -16,7 +16,7 @@ if [ "$already_mounted_device" != "$device" ]; then
  mount $device $mountdir || exit 1 
 fi 
  
-rsync ... / $mountdir/root_backup || exit 1
+rsync -axvP / $mountdir/root_backup || exit 1
  
 if [ "$already_mounted_device" != "$device" ]; then 
  umount $device || exit 1 

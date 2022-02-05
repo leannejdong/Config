@@ -1,3 +1,31 @@
+## Essentials  after reinstalling arch
+
+ * Check interconnected devices
+
+ ```shell
+ lsblk                                                       
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda      8:0    0 931.5G  0 disk 
+├─sda1   8:1    0   300M  0 part /boot/efi
+└─sda2   8:2    0 931.2G  0 part /
+sdc      8:32   1  58.6G  0 disk 
+└─sdc1   8:33   1  58.6G  0 part /run/media/leannejd/288C-A797
+sr0     11:0    1  1024M  0 rom  
+ ```
+so `sdc1` is our usb drive.
+
+* The `rsync` back up `/` and `/dev/sda2` is mounted on `/`. So, we create the directory `/mnt/usb`, mount `/dev/sdc1` on `/mnt/usb`. After running the command below, the contents of drive `/dev/sdc1` is visible at `/mnt/usb`.
+
+`mount /dev/sdc1 /mnt/usb`
+
+* Run script `daily_backup`. Make sure to give permission first.
+
+```shell
+chmod+x auto_daily_backup
+./auto_daily_backup
+```
+Make sure the `/mnt/usb/root_backup/mnt/usb` is empty as we don't want to recursively back up!
+
 ## C++
 
 `sudo pacman -Sy gcc`
