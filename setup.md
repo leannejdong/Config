@@ -33,7 +33,19 @@ Make sure the `/mnt/usb/root_backup/mnt/usb` is empty as we don't want to recurs
 
 ### Install stable kernels
 
+* Identify in-use kernel
+```shell
+mhwd-kernel -li
 
+Currently running: 5.15.19-1-MANJARO (linux515)
+The following kernels are installed in your system:
+   * linux513
+   * linux515
+```
+
+* Install new kernels
+
+`sudo mhwd-kernel -i linux515`
 ## C++
 
 `sudo pacman -S base-devel`
