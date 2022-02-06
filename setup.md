@@ -1,4 +1,9 @@
 ## Essentials  after reinstalling arch
+ ### setting up the fastest mirror
+
+ sudo pacman-mirrors --fasttrack
+
+### Backup
 
  * Check interconnected devices
 
@@ -26,7 +31,12 @@ chmod+x auto_daily_backup
 ```
 Make sure the `/mnt/usb/root_backup/mnt/usb` is empty as we don't want to recursively back up!
 
+### Install stable kernels
+
+
 ## C++
+
+`sudo pacman -S base-devel`
 
 `sudo pacman -Sy gcc`
 
