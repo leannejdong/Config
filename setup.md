@@ -27,15 +27,51 @@ so `sdc1` is our usb drive.
 
 ```shell
 chmod+x auto_daily_backup
-./auto_daily_backup
+sudo ./auto_daily_backup
 ```
 Make sure the `/mnt/usb/root_backup/mnt/usb` is empty as we don't want to recursively back up!
+
+### Trouble shooting
+
+* your usb might be full
+
+Check that `/mnt/usb/root_backup/mnt/usb` is empty.
+
+`ls /mnt/usb/root_backup/mnt/usb`
 
 ### Install stable kernels
 
 * Identify in-use kernel
+
 ```shell
 mhwd-kernel -li
+```
+
+## Networking
+
+`sudo systemctl restart NetworkManager`
+
+`sudo systemctl enable NetworkManager`  
+
+## Docker
+
+* `sudo pacman -S docker`
+
+### Managing docker
+
+`sudo systemctl start docker`
+
+`sudo systemctl enable docker`
+
+`sudo systemctl status docker`
+
+`sudo systemctl stop docker`
+
+`sudo docker version`
+
+### tect docker if it is running
+
+`sudo docker run hello-cat`
 
 Currently running: 5.15.19-1-MANJARO (linux515)
 The following kernels are installed in your system:
@@ -60,6 +96,7 @@ The following kernels are installed in your system:
 
 #### Set global identity
 The global settings are stored in the `.gitconfig` file under your home directory.
+
 ```
 git config --global user.name "your_name"
 git config --global user.email "your_email_address"
