@@ -144,3 +144,7 @@ Test to see if gpg-agent can cache your private key’s passphrase by amending y
 
 `echo "test" | gpg --clearsign`
 
+## Restart gpg-agent
+
+`gpgconf --kill gpg-agent`
+
