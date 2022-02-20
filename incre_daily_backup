@@ -1,8 +1,8 @@
 #!/bin/bash
 DAY=$(date +%A)
-
+ 
 rm -fr /mnt/usb/root_backup/incremental/$DAY
 rm -fr /mnt/usb/boot_backup/incremental/$DAY
 
-rsync --one-file-system -a --delete  --progress --inplace --backup --backup-dir=/mnt/usb/root_backup/incremental/$DAY/ / /mnt/usb/root_backup/backup/
-rsync --one-file-system -a --delete  --progress --inplace --backup --backup-dir=/mnt/usb/boot_backup/incremental/$DAY/ /boot/efi/ /mnt/usb/boot_backup/backup/
+rsync --one-file-system -a --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt*","/lost+found","/swap"} --progress --inplace --backup --backup-dir=/mnt/usb/root_backup/incremental/$DAY/ / /mnt/usb/root_backup/backup/
+rsync --one-file-system -a --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt*","/lost+found","/swap"} --progress --inplace --backup --backup-dir=/mnt/usb/boot_backup/incremental/$DAY/ /boot/efi/ /mnt/usb/boot_backup/backup/
