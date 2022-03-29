@@ -1,0 +1,47 @@
+
+pushd $(dirname "$0")/scalerprojects > /dev/null
+
+git fetch
+git checkout develop
+git pull
+git submodule update --init --recursive
+
+pushd scalercore
+git fetch
+git checkout develop
+git pull
+popd
+
+pushd scaler_analyser
+git fetch
+git checkout develop
+git pull
+popd
+
+pushd scaler_chords_ui
+git fetch
+git checkout master
+git pull
+popd
+
+pushd scaler_music_core
+git fetch
+git checkout develop
+git pull
+popd
+
+pushd scaler_settings_data
+git fetch
+git checkout develop
+git pull
+popd
+
+pushd scaler_state
+git fetch
+git checkout develop
+git pull
+popd
+
+popd > /dev/null
+
+
