@@ -31,5 +31,9 @@ cd ../scalercore
 git checkout develop
 cd ../scaler_music_core
 git checkout develop
+git fetch
 git pull
+cd ../scaler_analyser
+git checkout feature/SC-1657-pluginval---add-audio-detection-
+
 ```
