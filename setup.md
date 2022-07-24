@@ -114,6 +114,20 @@ Your local, or project-specific settings are stored in a project’s `.git/confi
 
 `git config --local user.email "your_email_address"`
 
+#### Set multiple ssh keys for different clients
+
+`ssh-keygen -t ed25519 -C "companyX"`
+
+`eval `ssh-agent -s` `
+
+`ssh-add ~/.ssh/urprivatekey`
+
+`cat ~/.ssh/urprivatekey`
+
+#### clone new client repo
+
+`git clone repo_url --config core.sshCommand="ssh -i ~/.ssh/urprivatekey"`
+
 ## Some other common commands
 
 ### (force)Update package even if recently updated
