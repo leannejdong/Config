@@ -1,3 +1,40 @@
+## Invalid or corrupted package (PGP signature)
+https://forum.manjaro.org/t/pgp-signature-inferno-invalid-or-corrupted-package-pgp-signature/116799/17
+
+```
+    error: archlinux-keyring: signature from "Christian Hesse <eworm@archlinux.org>" is unknown trust
+    :: File /var/cache/pacman/pkg/archlinux-keyring-20220424-1-any.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+    Do you want to delete it? [Y/n] 
+    error: failed to commit transaction (invalid or corrupted package (PGP signature))
+    Errors occurred, no packages were upgraded.
+```
+First we need to remove the old keyring folder
+
+`sudo rm -rf /etc/pacman.d/gnupg`
+
+Then initialize a new keyring
+
+`sudo pacman-key --init`
+
+Populate the keyring
+
+`sudo pacman-key --populate`
+
+Update mirror
+
+`sudo pacman-mirrors -c Global`
+
+update databases from mirror
+
+`sudo pacman -Syy`
+
+sync the current valid keyrings
+
+`sudo pacman -S manjaro-keyring archlinux-keyring`
+
+rerun system sync
+`sudo pacman -Su`
+
 ## Essentials  after reinstalling arch
  ### setting up the fastest mirror
 
@@ -12,7 +49,7 @@
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
 sda      8:0    0 931.5G  0 disk 
 ├─sda1   8:1    0   300M  0 part /boot/efi
-└─sda2   8:2    0 931.2G  0 part /
+─sda2   8:2    0 931.2G  0 part /
 sdc      8:32   1  58.6G  0 disk 
 └─sdc1   8:33   1  58.6G  0 part /run/media/leannejd/288C-A797
 sr0     11:0    1  1024M  0 rom  
@@ -117,9 +154,9 @@ Your local, or project-specific settings are stored in a project’s `.git/confi
 
 #### Set multiple ssh keys for different clients
 
-`ssh-keygen -t ed25519 -C "companyX"`
+`ssh-keygen -t ed25519 -C "companyZ"`
 
-`eval `ssh-agent -s` `
+eval `ssh-agent -s` 
 
 `ssh-add ~/.ssh/urprivatekey`
 
