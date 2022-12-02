@@ -1,6 +1,7 @@
 # Fail to update
 
-Actions when ` sudo pacman -S Syu` fails, most cases it is connection time out
+Actions when ` sudo pacman -Syu` fails, most cases it is connection time out, i.e.
+` Resolving timed out after 10000 milliseconds`
 
 1. Check your mirrors according to location
 2. Edit sudo vim /etc/resolv.conf
